@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Celebrating 2 years and 4 months of love between Maung Thar Htet Paing and Ma Su Hnin Wai — together since 1.8.2024." />
+<title>Thar Htet Paing ♥ Su Hnin Wai | 2 Years &amp; 4 Months</title>
+<link rel="icon" href="assets/heart.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Myanmar:wght@300;400;500;600&family=Padauk:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="nav" id="nav">
+  <a class="nav-monogram" href="#home">T <span>♥</span> S</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#counter">Our Time</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#prayers">Prayers</a></li>
+    <li><a href="#vows">Vows</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<header class="hero" id="home">
+  <div class="hero-glow"></div>
+
+  <!-- decorative floral corners -->
+  <svg class="floral floral-tl" viewBox="0 0 200 200" aria-hidden="true"><use href="assets/floral.svg#bouquet"/></svg>
+  <svg class="floral floral-tr" viewBox="0 0 200 200" aria-hidden="true"><use href="assets/floral.svg#bouquet"/></svg>
+  <svg class="floral floral-bl" viewBox="0 0 200 200" aria-hidden="true"><use href="assets/floral.svg#bouquet"/></svg>
+  <svg class="floral floral-br" viewBox="0 0 200 200" aria-hidden="true"><use href="assets/floral.svg#bouquet"/></svg>
+
+  <div class="hero-inner">
+    <p class="hero-kicker">✦ &nbsp;Forever &amp; Always&nbsp; ✦</p>
+
+    <div class="milestone-badge">
+      <svg viewBox="0 0 120 120" class="badge-ring" aria-hidden="true">
+        <circle cx="60" cy="60" r="54" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="4 6"/>
+        <circle cx="60" cy="60" r="44" fill="rgba(74,14,46,.55)" stroke="#e5c07b" stroke-width="1.2"/>
+        <defs>
+          <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f6e2a8"/><stop offset=".5" stop-color="#d4a24e"/><stop offset="1" stop-color="#f6e2a8"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="badge-text">
+        <span class="badge-big">2</span>
+        <span class="badge-small">Years<br/>&amp; 4 Months</span>
+      </div>
+    </div>
+
+    <h1 class="hero-names">
+      <span class="name">Maung Thar Htet Paing</span>
+      <span class="name-myanmar">မောင်သာထက်ပိုင်</span>
+      <span class="hero-heart" aria-hidden="true">
+        <svg viewBox="0 0 32 30"><path d="M16 29C7 22 1 16.5 1 9.5 1 4.9 4.9 1 9.5 1c2.9 0 5 1.3 6.5 3.4C17.5 2.3 19.6 1 22.5 1 27.1 1 31 4.9 31 9.5 31 16.5 25 22 16 29z" fill="#e2607e" stroke="#f6c9d4" stroke-width="1.4"/></svg>
+      </span>
+      <span class="name">Ma Su Hnin Wai</span>
+      <span class="name-myanmar">မစုနှင်းဝေ</span>
+    </h1>
+
+    <p class="hero-date">Anniversary <strong>01 · 08 · 2024</strong></p>
+    <p class="hero-tagline">Two hearts, one beautiful journey — still writing our story,<br/>every single day.</p>
+
+    <a class="cta" href="#counter">Celebrate Our Love <span aria-hidden="true">→</span></a>
+  </div>
+
+  <a href="#counter" class="scroll-hint" aria-label="Scroll down">
+    <span></span>
+  </a>
+</header>
+
+<main>
+
+<!-- ══════════ LIVE COUNTER ══════════ -->
+<section class="section counter-section" id="counter">
+  <p class="section-kicker">Every Second Counts</p>
+  <h2 class="section-title">Our Time Together</h2>
+  <p class="section-sub">Since <strong>1 August 2024</strong>, our love has been growing — second by second.</p>
+
+  <div class="counter-grid" id="counterGrid" role="timer" aria-label="Time elapsed since 1 August 2024">
+    <div class="counter-tile"><span class="counter-num" id="cYears">0</span><span class="counter-label">Years</span></div>
+    <div class="counter-tile"><span class="counter-num" id="cMonths">0</span><span class="counter-label">Months</span></div>
+    <div class="counter-tile"><span class="counter-num" id="cDays">0</span><span class="counter-label">Days</span></div>
+    <div class="counter-tile"><span class="counter-num" id="cHours">00</span><span class="counter-label">Hours</span></div>
+    <div class="counter-tile"><span class="counter-num" id="cMinutes">00</span><span class="counter-label">Minutes</span></div>
+    <div class="counter-tile"><span class="counter-num" id="cSeconds">00</span><span class="counter-label">Seconds</span></div>
+  </div>
+
+  <p class="total-days">That is <strong id="totalDays">0</strong> beautiful days of love <span aria-hidden="true">♥</span></p>
+</section>
+
+<!-- ══════════ GALLERY ══════════ -->
+<section class="section gallery-section" id="gallery">
+  <p class="section-kicker">Our Memories</p>
+  <h2 class="section-title">The Two of Us</h2>
+  <p class="section-sub">Every picture holds a prayer, a smile, and a piece of forever.</p>
+
+  <div class="gallery-grid">
+    <figure class="photo-card">
+      <div class="frame">
+        <div class="frame-inner">
+          <img src="photos/t.jpg" alt="Maung Thar Htet Paing" style="object-position: center 30%" onerror="this.onerror=null;this.src='assets/placeholder-boy.svg'" />
+        </div>
+      </div>
+      <figcaption>
+        <span class="caption-name">Maung Thar Htet Paing</span>
+        <span class="caption-role">His heart beats for her</span>
+      </figcaption>
+    </figure>
+
+    <figure class="photo-card couple-card">
+      <div class="frame big">
+        <div class="frame-inner">
+          <img src="photos/t,s.jpg" alt="Maung Thar Htet Paing and Ma Su Hnin Wai together" style="object-position: center 32%" onerror="this.onerror=null;this.src='assets/placeholder-couple.svg'" />
+        </div>
+      </div>
+      <figcaption>
+        <span class="caption-name">Together ♥</span>
+        <span class="caption-role">01 · 08 · 2024 — the beginning of forever</span>
+      </figcaption>
+    </figure>
+
+    <figure class="photo-card">
+      <div class="frame">
+        <div class="frame-inner">
+          <img src="photos/s.jpg" alt="Ma Su Hnin Wai" style="object-position: center 25%" onerror="this.onerror=null;this.src='assets/placeholder-girl.svg'" />
+        </div>
+      </div>
+      <figcaption>
+        <span class="caption-name">Ma Su Hnin Wai</span>
+        <span class="caption-role">Her smile is his sunrise</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ══════════ OUR STORY / TIMELINE ══════════ -->
+<section class="section story-section" id="story">
+  <p class="section-kicker">Their Vibe ✨</p>
+  <h2 class="section-title">Milestones of Us</h2>
+
+  <ol class="timeline">
+    <li class="t-item reveal">
+      <span class="t-dot"></span>
+      <span class="t-date">၁ ဩဂုတ် ၂၀၂၄</span>
+      <div class="t-body my">
+        <h3>သူတို့ရဲ့ love story စဖြစ်တဲ့နေ့ ✨</h3>
+        <p>စီစဉ်ထားတာမှမဟုတ် — နှစ်ယောက်သား just… clicked ဖြစ်သွားတာ။ ဒီနေ့ကစပြီး best couple legend ဖြစ်လာတယ်၊ no cap. 🫶</p>
+      </div>
+    </li>
+    <li class="t-item reveal">
+      <span class="t-dot"></span>
+      <span class="t-date">၁ ဩဂုတ် ၂၀၂၅</span>
+      <div class="t-body my">
+        <h3>တစ်နှစ်ပြည့် — Still Going Strong</h3>
+        <p>၁၂ လစာ memes တွေ၊ ညလုံးပေါက် စကားပြောတွေ၊ “နင်ဘယ်မှာလဲ” ဆိုတဲ့ texts တွေနဲ့ အတူဖြတ်သန်းခဲ့ပြီး။ ခက်ခဲတာတွေကို ဖြတ်ကျော်ပြီးမှ… still slaying. Couple goals ပဲ။ 💅</p>
+      </div>
+    </li>
+    <li class="t-item reveal">
+      <span class="t-dot"></span>
+      <span class="t-date">၁ ဩဂုတ် ၂၀၂၆</span>
+      <div class="t-body my">
+        <h3>နှစ်နှစ် — Still Obsessed</h3>
+        <p>နှစ်နှစ်ကြာပေမဲ့ first day vibe နဲ့ အတူရှိနေတာပဲ။ စာတွေ၊ bad days တွေ၊ great days တွေ — တစ်ယောက်ကိုတစ်ယောက် အမြဲ hype ပေးတဲ့ ride or die နှစ်ယောက်။ 🚀</p>
+      </div>
+    </li>
+    <li class="t-item reveal highlight">
+      <span class="t-dot"></span>
+      <span class="t-date">၁ ဒီဇင်ဘာ ၂၀၂၆</span>
+      <div class="t-body my">
+        <h3>နှစ်နှစ်နှင့် လေးလ ✦ Still in Love</h3>
+        <p>Surviving မဟုတ်ဘူး — thriving ဖြစ်နေတယ်။ ရယ်မောခြင်း၊ chaos၊ “you’re my person” energy… forever ဆက်သွားမယ့် duo. Here’s to us, bestie. 🥂</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ══════════ PRAYERS ══════════ -->
+<section class="section prayers-section" id="prayers">
+  <p class="section-kicker">Straight From the Heart 💌</p>
+  <h2 class="section-title">Prayers for the Couple</h2>
+  <p class="section-sub">Prayers that literally hit different. 🙏</p>
+
+  <blockquote class="verse-banner reveal">
+    <p class="my">“ချစ်ခြင်းမေတ္တာသည် patient ဖြစ်တယ်၊ kind ဖြစ်တယ်… အမြဲယုံကြည်တယ်၊ အမြဲမျှော်လင့်တယ်၊ အမြဲ stand strong. ချစ်ခြင်းမေတ္တာ ဘယ်သောအခါမှ fail မဖြစ်ဘူး — real talk.”</p>
+    <cite>— ၁ ကောရိန္သု ၁၃း၄–၈ (Gen Z version 😄)</cite>
+  </blockquote>
+
+  <!-- 💌 Love letter box -->
+  <aside class="love-letter reveal my" aria-label="ချစ်သူမှ စာတစ်စောင်">
+    <span class="love-letter-heart" aria-hidden="true">💌</span>
+    <span class="love-letter-tag">နှလုံးသားထဲမှ စာတစ်စောင်</span>
+    <p class="love-letter-body">ကိုယ်တို့နှစ်ယောက်ရဲ့ ချစ်ခြင်းတွေက ဒီနေ့ဆို ၂ နှစ်နဲ့ ၄ လတောင် ပြည့်ခဲ့ပြီနော်။ 🥺❤️</p>
+    <p class="love-letter-body">အတူရှိခဲ့တဲ့ နေ့ရက်တိုင်းမှာ ပျော်ရွှင်မှုတွေရော စိတ်ကောက်စရာလေးတွေရော အမှတ်တရတွေ အများကြီးရှိခဲ့တယ်။ ဘယ်လိုအခြေအနေမျိုးပဲ ကြုံလာပါစေ ကိုယ်တို့နှစ်ယောက် လက်မလွှတ်ဘဲ အတူတူရှေ့ဆက်သွားကြမယ်နော်။ နောက်ထပ် Anniversary တွေ အများကြီးကိုလည်း မင်းနဲ့ပဲ ဖြတ်သန်းချင်တယ်။</p>
+    <p class="love-letter-sign">ချစ်တယ်နော် အချစ်ရေ။ 💗</p>
+  </aside>
+
+  <div class="prayer-grid">
+
+    <article class="prayer-card reveal my">
+      <div class="prayer-icon" aria-hidden="true">🕊️</div>
+      <h3>God ကို ကျေးဇူးတင်တဲ့ prayer</h3>
+      <p class="prayer-text">Dear Lord ရေ… မောင်သာထက်ပိုင်နဲ့ မစုနှင်းဝေတို့ကို ဒီလောက်လှတဲ့ love story လေး ပေးခဲ့တာ ကျေးဇူးတင်ပါတယ်။ ၂၀၂၄ ခုနှစ် ဩဂုတ်လ ၁ ရက်နေ့ကတည်းက သူတို့ကို တစ်ယောက်နဲ့တစ်ယောက် ပေးခဲ့တဲ့ love က literally so precious. မျှဝေတဲ့ ရယ်မောခြင်းတိုင်း၊ ကျော်ဖြတ်ခဲ့တဲ့ စိန်ခေါ်မှုတိုင်းက ကိုယ်တော်ပေးတဲ့ blessing တွေပဲ။ တစ်ယောက်ကိုတစ်ယောက် အမြဲတမ်း ကျေးဇူးတင်နေကြပါစေ၊ အိမ်ထဲမှာ ကျေးဇူးတော်သံတွေ အမြဲထွက်နေပါစေ။ သခင်ယေရှုရဲ့ နာမနဲ့ ဆုတောင်းပါတယ်။ အာမင် နော်။ 🤍</p>
+    </article>
+
+    <article class="prayer-card reveal my">
+      <div class="prayer-icon" aria-hidden="true">🕯️</div>
+      <h3>သူတို့ရဲ့ love အတွက် prayer (vibe check 🙏)</h3>
+      <p class="prayer-text">Lord ရေ… ဒီ relationship ရဲ့ ဗဟိုချက်မှာ ကိုယ်တော်ကို ထားပါတယ်။ စကားလုံးတွေ မလုံလောက်တဲ့အခါ ကိုယ်တော်ရဲ့ love က ပြောပေးပါ။ မုန်တိုင်းတွေ လာတဲ့အခါ ကိုယ်တော်က သူတို့ရဲ့ anchor ဖြစ်ပါစေ။ မောင်သာထက်ပိုင်ကို မစုနှင်းဝေကို မြတ်နိုးတတ်အောင်၊ မစုနှင်းဝေကို မောင်သာထက်ပိုင်ကို ယုံကြည်တတ်အောင် သင်ပေးပါ။ သည်းခံတတ်၊ ကြင်နာတတ်တဲ့ love နဲ့ ချည်နှောင်ပေးပါ — ဘယ်တော့မှ လက်မလွှတ်တဲ့ love ဖြစ်ပါစေ။ Year by year ပိုပြီး နက်နဲလာပါစေ။ ကိုယ်တော်ရဲ့ ဂုဏ်တော်အသရေအတွက် အာမင်။ ✨</p>
+    </article>
+
+    <article class="prayer-card reveal my">
+      <div class="prayer-icon" aria-hidden="true">🌸</div>
+      <h3>အနာဂတ်အတွက် blessing (manifesting 💫)</h3>
+      <p class="prayer-text">Lord ရေ… သူတို့ရဲ့ future ကို bless ပေးပါ။ အိပ်မက်တွေ၊ အလုပ်တွေ၊ အိမ်ထောင်၊ တည်ဆောက်နေတဲ့ မိသားစုကို ကောင်းကြီးပေးပါ။ ဆုံးဖြတ်ချက်တွေမှာ ဉာဏ်ပညာ ပေးပါ၊ ခက်ခဲတဲ့အခါ ငြိမ်သက်ခြင်း ပေးပါ၊ ရိုးရှင်းတဲ့ နေ့ရက်တွေမှာလည်း ပျော်ရွှင်ခြင်း ပေးပါ။ ၂၀၂၄ ဩဂုတ် ၁ ရက်နေ့က စတင်ခဲ့တဲ့ love က နေ့ရက်တိုင်းမှာ ပိုပြီး glow up ဖြစ်လာပါစေ။ အတူတူ အိုမင်းရင့်ရော်တဲ့အထိ လက်တွဲနေကြပါစေ။ သခင်ယေရှုရဲ့ နာမနဲ့ ဆုတောင်းပါတယ်။ အာမင် နော်။ 🥂</p>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- ══════════ SEALED WITH A PROMISE (cut from Prayers, redesigned) ══════════ -->
+<section class="section vows-section" id="vows">
+  <p class="section-kicker">From the Heart ✦ Forever</p>
+  <h2 class="section-title">Sealed With a Promise</h2>
+  <p class="section-sub">Words we promised each other — written in gold, kept in the heart.</p>
+
+  <div class="vows-grid">
+
+    <!-- ♾️ Forever Promise card -->
+    <article class="vow-card vow-rose reveal my" aria-label="2 Years and 4 Months with my favorite human">
+      <svg class="vow-corner vc-tl" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+        <path d="M10 62C10 32 22 18 62 10" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10 42C16 27 26 18 44 12" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <path d="M31 31l6 6-6 6-6-6z" fill="currentColor" opacity=".9"/>
+        <circle cx="10" cy="62" r="2.2" fill="currentColor"/>
+        <circle cx="62" cy="10" r="2.2" fill="currentColor"/>
+      </svg>
+      <svg class="vow-corner vc-tr" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+        <path d="M10 62C10 32 22 18 62 10" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10 42C16 27 26 18 44 12" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <path d="M31 31l6 6-6 6-6-6z" fill="currentColor" opacity=".9"/>
+        <circle cx="10" cy="62" r="2.2" fill="currentColor"/>
+        <circle cx="62" cy="10" r="2.2" fill="currentColor"/>
+      </svg>
+      <svg class="vow-corner vc-bl" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+        <path d="M10 62C10 32 22 18 62 10" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10 42C16 27 26 18 44 12" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <path d="M31 31l6 6-6 6-6-6z" fill="currentColor" opacity=".9"/>
+        <circle cx="10" cy="62" r="2.2" fill="currentColor"/>
+        <circle cx="62" cy="10" r="2.2" fill="currentColor"/>
+      </svg>
+      <svg class="vow-corner vc-br" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+        <path d="M10 62C10 32 22 18 62 10" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10 42C16 27 26 18 44 12" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <path d="M31 31l6 6-6 6-6-6z" fill="currentColor" opacity=".9"/>
+        <circle cx="10" cy="62" r="2.2" fill="currentColor"/>
+        <circle cx="62" cy="10" r="2.2" fill="currentColor"/>
+      </svg>
+
+      <div class="vow-seal" aria-hidden="true">🫶🏻</div>
+      <p class="vow-tag">2 Years &amp; 4 Months<br/>with my favorite human</p>
+      <div class="vow-divider" aria-hidden="true"><span>♾️</span></div>
+      <p class="vow-body">မနေ့ကထက် ဒီနေ့ပိုချစ်ပြီး ဒီနေ့ထက် မနက်ဖြန်ပိုချစ်သွားမယ်။</p>
+      <p class="vow-body vow-body-strong">အမြဲတမ်း ကိုယ့်ဘေးမှာပဲ ရှိနေပေးပါနော်။ ♾️💍</p>
+      <p class="vow-sign">Forever &amp; Always</p>
+    </article>
+
+    <!-- ✨ I Choose You card -->
+    <article class="vow-card vow-gold reveal my" aria-label="I choose you, always">
+      <svg class="vow-corner vc-tl" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+        <path d="M10 62C10 32 22 18 62 10" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10 42C16 27 26 18 44 12" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <path d="M31 31l6 6-6 6-6-6z" fill="currentColor" opacity=".9"/>
+        <circle cx="10" cy="62" r="2.2" fill="currentColor"/>
+        <circle cx="62" cy="10" r="2.2" fill="currentColor"/>
+      </svg>
+      <svg class="vow-corner vc-tr" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+        <path d="M10 62C10 32 22 18 62 10" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10 42C16 27 26 18 44 12" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <path d="M31 31l6 6-6 6-6-6z" fill="currentColor" opacity=".9"/>
+        <circle cx="10" cy="62" r="2.2" fill="currentColor"/>
+        <circle cx="62" cy="10" r="2.2" fill="currentColor"/>
+      </svg>
+      <svg class="vow-corner vc-bl" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+        <path d="M10 62C10 32 22 18 62 10" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10 42C16 27 26 18 44 12" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <path d="M31 31l6 6-6 6-6-6z" fill="currentColor" opacity=".9"/>
+        <circle cx="10" cy="62" r="2.2" fill="currentColor"/>
+        <circle cx="62" cy="10" r="2.2" fill="currentColor"/>
+      </svg>
+      <svg class="vow-corner vc-br" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+        <path d="M10 62C10 32 22 18 62 10" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M10 42C16 27 26 18 44 12" stroke="currentColor" stroke-width="1" opacity=".7"/>
+        <path d="M31 31l6 6-6 6-6-6z" fill="currentColor" opacity=".9"/>
+        <circle cx="10" cy="62" r="2.2" fill="currentColor"/>
+        <circle cx="62" cy="10" r="2.2" fill="currentColor"/>
+      </svg>
+
+      <div class="vow-seal" aria-hidden="true">✨</div>
+      <p class="vow-tag">I Choose You ✨</p>
+      <div class="vow-divider" aria-hidden="true"><span>✦</span></div>
+      <p class="vow-body">၂ နှစ်နဲ့ ၄ လဆိုတာ အချိန်အတိုင်းအတာတစ်ခုထက် ပိုပါတယ်။</p>
+      <p class="vow-body">မင်းနဲ့အတူ ဖြတ်သန်းခဲ့တဲ့ အမှတ်တရတွေ၊ မင်းကြောင့် ပြုံးခဲ့ရတဲ့ အချိန်တွေ၊ မင်းကို လွမ်းခဲ့ရတဲ့ ညတွေ အားလုံးက ကိုယ့်အတွက် တန်ဖိုးရှိပါတယ်။</p>
+      <p class="vow-body">အနာဂတ်မှာ ဘာတွေကြုံရမလဲ မသိပေမဲ့ ကိုယ်ရွေးချယ်ချင်တဲ့သူကတော့ အမြဲမင်းတစ်ယောက်တည်းပါပဲ။</p>
+      <p class="vow-sign">I choose you, always. ❤️</p>
+    </article>
+
+  </div>
+
+  <!-- 📖 Scripture for our story -->
+  <div class="scripture-bar reveal">
+    <p class="scripture-label"><span aria-hidden="true">✦</span> Scripture for Our Story <span aria-hidden="true">✦</span></p>
+    <div class="verse-chips">
+      <span class="chip">“ကြိုးသုံးပိုင်းခံကို ဖြတ်၍မရ — literally unbreakable duo.” — Ecclesiastes 4:9–12</span>
+      <span class="chip">“သင်သွားရာ ငါသွားမယ်, guaranteed. 🚀” — Ruth 1:16</span>
+      <span class="chip">“ချစ်ခြင်းမေတ္တာသည် everything ကို hold လုပ်တယ် — perfect harmony. 💞” — Colossians 3:14</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="footer">
+  <svg class="footer-heart" viewBox="0 0 32 30" aria-hidden="true"><path d="M16 29C7 22 1 16.5 1 9.5 1 4.9 4.9 1 9.5 1c2.9 0 5 1.3 6.5 3.4C17.5 2.3 19.6 1 22.5 1 27.1 1 31 4.9 31 9.5 31 16.5 25 22 16 29z" fill="#e2607e"/></svg>
+  <p class="footer-names">Maung Thar Htet Paing <span>♥</span> Ma Su Hnin Wai</p>
+  <p class="footer-date">01 · 08 · 2024 — Forever &amp; Always</p>
+  <p class="footer-note">Made with love, for 2 years &amp; 4 months — and every year after.</p>
+</footer>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Photo viewer">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+  <img id="lightboxImg" alt="" />
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

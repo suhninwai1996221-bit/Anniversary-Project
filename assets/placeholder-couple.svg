@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="28%" r="95%">
+      <stop offset="0" stop-color="#5c1a33"/>
+      <stop offset="0.55" stop-color="#3d1024"/>
+      <stop offset="1" stop-color="#1f0512"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6e2a8"/>
+      <stop offset="1" stop-color="#d4a24e"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#bg)"/>
+  <!-- crescent moon -->
+  <path d="M470 96a64 64 0 1 0 46 110 78 78 0 0 1-46-110z" fill="#f6e2a8" opacity="0.85"/>
+  <!-- stars -->
+  <g fill="#fdf6ee">
+    <circle cx="120" cy="90" r="2.4"/><circle cx="220" cy="150" r="1.7"/><circle cx="330" cy="70" r="2"/>
+    <circle cx="90" cy="210" r="1.5"/><circle cx="380" cy="170" r="1.6"/><circle cx="290" cy="130" r="1.3"/>
+  </g>
+  <!-- two silhouettes under the moon -->
+  <g fill="url(#gold)" opacity="0.96">
+    <circle cx="250" cy="420" r="66"/>
+    <path d="M250 505c-84 0-142 55-142 148v120h284V653c0-93-58-148-142-148z"/>
+    <circle cx="392" cy="428" r="56"/>
+    <path d="M392 505c-70 0-120 47-120 124v144h240V629c0-77-50-124-120-124z"/>
+    <path d="M336 448c26 20 62 20 84 0-8 30-24 44-42 44s-34-14-42-44z" opacity="0.8"/>
+  </g>
+  <!-- heart between them -->
+  <path d="M320 470c-8-6-13-10.6-13-16.4 0-4.3 3.3-7.6 7.6-7.6 2.3 0 4 1 5.4 2.8 1.4-1.8 3.1-2.8 5.4-2.8 4.3 0 7.6 3.3 7.6 7.6 0 5.8-5 10.4-13 16.4z" fill="#e2607e" stroke="#ffd3dc" stroke-width="1"/>
+  <text x="320" y="742" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#f6e2a8" letter-spacing="5">TOGETHER SINCE 01·08·2024</text>
+  <text x="320" y="700" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#f6c9d4" letter-spacing="2" opacity="0.9">ADD COUPLE PHOTO — photos/couple.jpg</text>
+</svg>

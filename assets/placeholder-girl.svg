@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="30%" r="90%">
+      <stop offset="0" stop-color="#6e2340"/>
+      <stop offset="1" stop-color="#33101f"/>
+    </radialGradient>
+    <linearGradient id="sil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd3dc"/>
+      <stop offset="1" stop-color="#e2607e"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg)"/>
+  <circle cx="300" cy="210" r="150" fill="none" stroke="#f6c9d4" stroke-width="2" stroke-dasharray="5 8" opacity="0.7"/>
+  <!-- female silhouette -->
+  <g fill="url(#sil)" opacity="0.95">
+    <circle cx="300" cy="295" r="72"/>
+    <path d="M300 405c-88 0-148 62-148 165v180h296V570c0-103-60-165-148-165z"/>
+    <!-- long hair -->
+    <path d="M228 268c-14 84 8 132 30 150-36-24-52-96-42-156z"/>
+    <path d="M372 268c14 84-8 132-30 150 36-24 52-96 42-156z"/>
+  </g>
+  <text x="300" y="742" text-anchor="middle" font-family="Georgia, serif" font-size="46" fill="#ffd3dc" letter-spacing="8">SU HNIN WAI</text>
+  <text x="300" y="700" text-anchor="middle" font-family="Georgia, serif" font-size="26" fill="#f6e2a8" letter-spacing="3" opacity="0.9">ADD HER PHOTO — photos/girl.jpg</text>
+</svg>

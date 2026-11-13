@@ -1,0 +1,798 @@
+/* ═══════════════════════════════════════════════
+   Maung Thar Htet Paing ♥ Ma Su Hnin Wai
+   2 Years & 4 Months — Anniversary Design
+   ═══════════════════════════════════════════════ */
+
+:root {
+  --wine-900: #2b0a1a;
+  --wine-800: #3d1024;
+  --wine-700: #4a0e2e;
+  --wine-600: #5c1a33;
+  --rose: #e2607e;
+  --rose-soft: #f6c9d4;
+  --blush: #fbe9ec;
+  --cream: #fdf6ee;
+  --gold: #e5c07b;
+  --gold-deep: #d4a24e;
+  --gold-light: #f6e2a8;
+  --text: #f7e8e4;
+  --text-dim: #d9b8bd;
+  --shadow: 0 20px 50px rgba(0, 0, 0, .45);
+  --serif: 'Playfair Display', 'Noto Sans Myanmar', Georgia, serif;
+  --body: 'Cormorant Garamond', 'Noto Sans Myanmar', Georgia, serif;
+  --script: 'Great Vibes', cursive;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--wine-900);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--rose); color: #fff; }
+
+/* ── petal canvas ─────────────────────────── */
+#petals {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ══════════ NAV ══════════ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .75rem clamp(1rem, 4vw, 3rem);
+  background: rgba(43, 10, 26, .55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(229, 192, 123, .18);
+  transition: background .4s ease;
+}
+.nav.scrolled { background: rgba(43, 10, 26, .9); }
+.nav-monogram {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: .15em;
+  color: var(--gold);
+  text-decoration: none;
+}
+.nav-monogram span { color: var(--rose); }
+.nav-links { display: flex; gap: clamp(.6rem, 2vw, 1.6rem); list-style: none; }
+.nav-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-family: var(--body);
+  font-size: .95rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  position: relative;
+  padding: .2rem .1rem;
+  transition: color .3s;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute; left: 0; bottom: -2px;
+  height: 2px; width: 0;
+  background: linear-gradient(90deg, var(--gold), var(--rose));
+  transition: width .3s ease;
+}
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--gold-light); }
+.nav-links a:hover::after, .nav-links a:focus-visible::after { width: 100%; }
+
+@media (max-width: 640px) { .nav-links { display: none; } }
+
+/* ══════════ HERO ══════════ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(1200px 700px at 50% -10%, rgba(226, 96, 126, .28), transparent 60%),
+    radial-gradient(900px 600px at 50% 115%, rgba(212, 162, 78, .22), transparent 60%),
+    linear-gradient(160deg, #3d1024 0%, #2b0a1a 55%, #1f0512 100%);
+}
+.hero-glow {
+  position: absolute;
+  width: 640px; height: 640px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(246, 226, 168, .16), transparent 65%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: .8; }
+  50%      { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
+}
+
+.floral {
+  position: absolute;
+  width: clamp(120px, 22vw, 230px);
+  opacity: .9;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.5));
+  pointer-events: none;
+  z-index: 2;
+}
+.floral-tl { top: -8px; left: -8px; }
+.floral-tr { top: -8px; right: -8px; transform: scaleX(-1); }
+.floral-bl { bottom: -8px; left: -8px; transform: scaleY(-1); }
+.floral-br { bottom: -8px; right: -8px; transform: scale(-1, -1); }
+
+.hero-inner {
+  position: relative;
+  z-index: 3;
+  padding: 6.5rem 1.25rem 5rem;
+  max-width: 1000px;
+}
+
+.hero-kicker {
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  font-size: .8rem;
+  color: var(--gold);
+  margin-bottom: 1.1rem;
+}
+
+/* milestone badge */
+.milestone-badge {
+  position: relative;
+  width: 132px; height: 132px;
+  margin: 0 auto 1.4rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.badge-ring {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  animation: spinSlow 24s linear infinite;
+}
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+.badge-text { position: relative; display: flex; flex-direction: column; align-items: center; line-height: 1; }
+.badge-big {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 2.6rem;
+  background: linear-gradient(180deg, var(--gold-light), var(--gold-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.badge-small {
+  font-size: .52rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-top: .35rem;
+}
+
+.hero-names { display: flex; flex-direction: column; gap: .1rem; }
+.name {
+  font-family: var(--script);
+  font-weight: 400;
+  font-size: clamp(2rem, 7.2vw, 4.2rem);
+  line-height: 1.15;
+  background: linear-gradient(180deg, #fff7ec 15%, var(--rose-soft) 55%, var(--rose) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 60px rgba(226, 96, 126, .35);
+}
+.name-myanmar {
+  font-family: 'Noto Sans Myanmar', 'Padauk', var(--body);
+  font-weight: 300;
+  font-size: clamp(.78rem, 1.9vw, .95rem);
+  color: var(--text-dim);
+  letter-spacing: .08em;
+}
+.hero-heart { margin: .35rem auto; }
+.hero-heart svg { width: clamp(30px, 5vw, 44px); animation: heartbeat 1.4s ease-in-out infinite; }
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.28); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.18); }
+  60% { transform: scale(1); }
+}
+
+.hero-date {
+  margin-top: 1.15rem;
+  font-family: var(--serif);
+  letter-spacing: .28em;
+  font-size: clamp(.75rem, 2vw, 1rem);
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+.hero-date strong { color: #fff; }
+
+.hero-tagline {
+  margin: 1rem auto 0;
+  max-width: 520px;
+  font-style: italic;
+  color: var(--text-dim);
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1.6rem;
+  padding: .85rem 2.4rem;
+  font-family: var(--serif);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: .85rem;
+  color: var(--wine-800);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-deep));
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 8px 30px rgba(212, 162, 78, .35), inset 0 1px 0 rgba(255,255,255,.7);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.cta:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 14px 40px rgba(212, 162, 78, .45); }
+
+.scroll-hint {
+  position: absolute;
+  bottom: 1.4rem; left: 50%;
+  transform: translateX(-50%);
+  width: 26px; height: 42px;
+  border: 2px solid rgba(246, 226, 168, .6);
+  border-radius: 14px;
+  z-index: 3;
+}
+.scroll-hint span {
+  position: absolute;
+  top: 7px; left: 50%;
+  width: 5px; height: 9px;
+  margin-left: -2.5px;
+  border-radius: 4px;
+  background: var(--gold-light);
+  animation: wheel 1.6s ease-in-out infinite;
+}
+@keyframes wheel {
+  0% { transform: translateY(0); opacity: 1; }
+  70%, 100% { transform: translateY(14px); opacity: 0; }
+}
+
+/* ══════════ SECTIONS ══════════ */
+.section {
+  position: relative;
+  padding: clamp(3.5rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 2;
+}
+.section-kicker {
+  text-align: center;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  font-size: .72rem;
+  color: var(--rose);
+  margin-bottom: .5rem;
+}
+.section-title {
+  text-align: center;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  color: var(--cream);
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 90px; height: 3px;
+  margin: .6rem auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), var(--rose), transparent);
+}
+.section-sub {
+  text-align: center;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-top: .6rem;
+}
+.section-sub strong { color: var(--gold-light); }
+
+/* ══════════ COUNTER ══════════ */
+.counter-section { text-align: center; }
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(.5rem, 1.5vw, 1.1rem);
+  margin-top: 2rem;
+}
+.counter-tile {
+  background: linear-gradient(170deg, rgba(92, 26, 51, .85), rgba(61, 16, 36, .9));
+  border: 1px solid rgba(229, 192, 123, .28);
+  border-radius: 18px;
+  padding: 1.1rem .4rem .9rem;
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.08);
+}
+.counter-num {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(1.4rem, 4.5vw, 2.3rem);
+  background: linear-gradient(180deg, #fff, var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.counter-label {
+  display: block;
+  font-size: .65rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-top: .3rem;
+}
+.total-days { margin-top: 1.4rem; color: var(--text-dim); font-size: 1.1rem; }
+.total-days strong { color: var(--gold-light); font-family: var(--serif); }
+
+@media (max-width: 760px) {
+  .counter-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ══════════ GALLERY ══════════ */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: center;
+  margin-top: 2.5rem;
+}
+.photo-card { text-align: center; }
+.frame {
+  position: relative;
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(150deg, var(--gold-light), var(--gold-deep) 45%, #8a5a1e 75%, var(--gold-light));
+  box-shadow: var(--shadow);
+  transform: rotate(-1.5deg);
+  transition: transform .4s ease;
+  cursor: zoom-in;
+}
+.photo-card:nth-child(3) .frame { transform: rotate(1.5deg); }
+.photo-card:hover .frame { transform: rotate(0) translateY(-6px) scale(1.02); }
+.frame-inner {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 3px solid rgba(43, 10, 26, .85);
+  background: var(--wine-800);
+  aspect-ratio: 3 / 4;
+}
+.frame.big .frame-inner { aspect-ratio: 4 / 5; }
+.frame-inner img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.caption-name {
+  display: block;
+  font-family: var(--script);
+  font-size: 1.5rem;
+  color: var(--gold-light);
+  margin-top: .9rem;
+}
+.caption-role {
+  display: block;
+  font-size: .85rem;
+  font-style: italic;
+  color: var(--text-dim);
+}
+
+@media (max-width: 860px) {
+  .gallery-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+  .frame, .photo-card:nth-child(3) .frame { transform: rotate(0); }
+}
+
+/* ══════════ TIMELINE ══════════ */
+.timeline { list-style: none; max-width: 760px; margin: 2.5rem auto 0; position: relative; padding-left: 2.2rem; }
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px; top: 6px; bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gold), var(--rose) 60%, transparent);
+}
+.t-item { position: relative; margin-bottom: 1.6rem; }
+.t-item:last-child { margin-bottom: 0; }
+.t-dot {
+  position: absolute;
+  left: -2.2rem; top: .35rem;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--gold-light), var(--gold-deep));
+  border: 2px solid var(--wine-900);
+  box-shadow: 0 0 0 3px rgba(229,192,123,.25);
+}
+.t-item.highlight .t-dot { background: radial-gradient(circle at 35% 35%, #ff9fb4, var(--rose)); box-shadow: 0 0 14px rgba(226,96,126,.7); }
+.t-date {
+  display: inline-block;
+  font-family: 'Noto Sans Myanmar', var(--serif);
+  font-weight: 400;
+  font-size: .78rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(229,192,123,.4);
+  border-radius: 999px;
+  padding: .15rem .8rem;
+  margin-bottom: .35rem;
+}
+.t-body {
+  background: linear-gradient(160deg, rgba(92,26,51,.55), rgba(43,10,26,.6));
+  border: 1px solid rgba(255,255,255,.07);
+  border-left: 3px solid var(--gold-deep);
+  padding: .9rem 1.2rem;
+  border-radius: 12px;
+}
+.t-item.highlight .t-body { border-left-color: var(--rose); background: linear-gradient(160deg, rgba(226,96,126,.18), rgba(61,16,36,.6)); }
+.t-body h3 { font-family: var(--serif); color: var(--cream); font-size: 1.15rem; }
+.t-body p { color: var(--text-dim); font-size: 1rem; }
+
+/* Burmese (Myanmar) text — modern, light, clean */
+.my, .my h3, .my p { font-family: 'Noto Sans Myanmar', 'Padauk', sans-serif; }
+.t-body.my h3 {
+  font-family: 'Noto Sans Myanmar', 'Padauk', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: .01em;
+  color: var(--cream);
+}
+.t-body.my p { font-size: .92rem; line-height: 1.75; font-weight: 300; color: #e8d5d2; }
+.verse-banner p.my {
+  font-family: 'Noto Sans Myanmar', 'Padauk', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: clamp(.95rem, 2.1vw, 1.12rem);
+  line-height: 2;
+  color: var(--cream);
+}
+
+/* reveal on scroll */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ══════════ LOVE LETTER BOX ══════════ */
+.love-letter {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto 2.2rem;
+  padding: 2rem clamp(1.5rem, 5vw, 2.6rem) 1.6rem;
+  background:
+    radial-gradient(600px 200px at 50% -30%, rgba(226, 96, 126, .18), transparent 70%),
+    linear-gradient(175deg, #fffdf6 0%, #fbf1e4 60%, #f6e6d8 100%);
+  color: #4a2030;
+  border-radius: 16px;
+  border: 1px solid #e6cdb4;
+  border-bottom: none;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, .45),
+    inset 0 1px 0 rgba(255, 255, 255, .9),
+    inset 0 -14px 24px -14px rgba(212, 162, 78, .5);
+  transform: rotate(-.5deg);
+  text-align: center;
+}
+.love-letter::before,
+.love-letter::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  width: 90px; height: 24px;
+  background: rgba(226, 96, 126, .35);
+  border-left: 1px dashed rgba(255,255,255,.8);
+  border-right: 1px dashed rgba(255,255,255,.8);
+  border-radius: 3px;
+}
+.love-letter::before { left: 12%; transform: rotate(-4deg); }
+.love-letter::after { right: 12%; transform: rotate(4deg); }
+.love-letter-heart { font-size: 1.8rem; display: block; margin-bottom: .15rem; }
+.love-letter-tag {
+  display: inline-block;
+  font-size: .68rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: #a8622d;
+  border: 1px solid rgba(168, 98, 45, .4);
+  padding: .3rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+.love-letter-body {
+  font-size: 1rem;
+  line-height: 2.05;
+  font-weight: 400;
+  color: #50303a;
+  margin-bottom: .85rem;
+}
+.love-letter-sign {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #c2476a;
+  margin-top: .4rem;
+  letter-spacing: .01em;
+}
+
+/* ══════════ OUR VOWS ══════════ */
+.vows-section { max-width: 1100px; }
+.vows-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  margin-top: 2.5rem;
+  align-items: stretch;
+}
+.vow-card {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 2.3rem clamp(1.4rem, 4vw, 2.1rem) 1.7rem;
+  border-radius: 22px;
+  border: 1px solid rgba(229, 192, 123, .42);
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.08);
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+.vow-card::before {
+  content: "";
+  position: absolute; inset: 12px;
+  border: 1px solid rgba(229, 192, 123, .38);
+  border-radius: 14px;
+  pointer-events: none;
+}
+.vow-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(229, 192, 123, .7);
+  box-shadow: 0 28px 60px rgba(0,0,0,.5), 0 0 44px rgba(226,96,126,.14), inset 0 1px 0 rgba(255,255,255,.1);
+}
+.vow-rose {
+  background:
+    radial-gradient(520px 280px at 50% -22%, rgba(226, 96, 126, .32), transparent 68%),
+    radial-gradient(400px 240px at 50% 122%, rgba(226, 96, 126, .16), transparent 70%),
+    linear-gradient(168deg, #471127 0%, #320a1d 58%, #230613 100%);
+}
+.vow-gold {
+  background:
+    radial-gradient(520px 280px at 50% -22%, rgba(246, 226, 168, .3), transparent 68%),
+    radial-gradient(400px 240px at 50% 122%, rgba(229, 192, 123, .14), transparent 70%),
+    linear-gradient(168deg, #3f2a10 0%, #2b1c0a 58%, #1d1105 100%);
+}
+.vow-corner {
+  position: absolute;
+  width: 54px; height: 54px;
+  color: rgba(229, 192, 123, .9);
+  pointer-events: none;
+}
+.vc-tl { top: 12px; left: 12px; }
+.vc-tr { top: 12px; right: 12px; transform: scaleX(-1); }
+.vc-bl { bottom: 12px; left: 12px; transform: scaleY(-1); }
+.vc-br { bottom: 12px; right: 12px; transform: scale(-1, -1); }
+
+.vow-seal {
+  width: 74px; height: 74px;
+  margin: 0 auto .9rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.9rem;
+  border-radius: 50%;
+  transform: rotate(-4deg);
+  border: 2px solid rgba(255,255,255,.28);
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.45),
+    inset 0 3px 6px rgba(255,255,255,.45),
+    inset 0 -5px 9px rgba(0,0,0,.4);
+}
+.vow-rose .vow-seal {
+  background: radial-gradient(circle at 35% 32%, #ff8ba0, #d4486b 62%, #8f2440);
+  box-shadow: 0 8px 22px rgba(226,96,126,.5), inset 0 3px 6px rgba(255,255,255,.45), inset 0 -5px 9px rgba(0,0,0,.4);
+}
+.vow-gold .vow-seal {
+  background: radial-gradient(circle at 35% 32%, #fbeeb9, #d4a24e 62%, #7c4f14);
+  box-shadow: 0 8px 22px rgba(229,192,123,.45), inset 0 3px 6px rgba(255,255,255,.55), inset 0 -5px 9px rgba(0,0,0,.4);
+}
+.vow-tag {
+  font-family: var(--serif);
+  font-size: .72rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  line-height: 2;
+  color: var(--gold-light);
+}
+.vow-gold .vow-tag { color: #f6e2a8; letter-spacing: .3em; }
+
+.vow-divider {
+  display: flex; align-items: center; gap: .7rem;
+  max-width: 240px;
+  margin: .75rem auto 1rem;
+  color: var(--gold);
+  font-size: .8rem;
+}
+.vow-divider::before,
+.vow-divider::after {
+  content: "";
+  flex: 1; height: 1px;
+}
+.vow-divider::before { background: linear-gradient(90deg, transparent, rgba(229,192,123,.75)); }
+.vow-divider::after { background: linear-gradient(270deg, transparent, rgba(229,192,123,.75)); }
+
+.vow-body {
+  font-size: .98rem;
+  line-height: 1.95;
+  font-weight: 300;
+  color: #efe0dc;
+}
+.vow-body + .vow-body { margin-top: .55rem; }
+.vow-body-strong { color: var(--cream); font-weight: 500; }
+
+.vow-sign {
+  margin-top: 1.1rem;
+  font-family: var(--script);
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  color: var(--rose-soft);
+  text-shadow: 0 2px 14px rgba(226,96,126,.35);
+}
+.vow-gold .vow-sign { color: var(--gold-light); text-shadow: 0 2px 14px rgba(229,192,123,.3); }
+
+/* scripture band — verses that hold this love together */
+.scripture-bar {
+  margin-top: 2.4rem;
+  text-align: center;
+  padding: 1.5rem clamp(1rem, 4vw, 2rem) 1.7rem;
+  border-radius: 18px;
+  border: 1px solid rgba(229, 192, 123, .35);
+  background:
+    linear-gradient(90deg, transparent, rgba(229,192,123,.09) 20%, rgba(229,192,123,.09) 80%, transparent),
+    rgba(229, 192, 123, .04);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+}
+.scripture-label {
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  font-size: .7rem;
+  color: var(--gold);
+  margin-bottom: .9rem;
+}
+
+/* ══════════ PRAYERS ══════════ */
+.prayers-section { max-width: 1100px; }
+.verse-banner {
+  text-align: center;
+  margin: 2rem auto 2.2rem;
+  max-width: 640px;
+  padding: 1.4rem 2rem;
+  border-top: 1px solid rgba(229,192,123,.5);
+  border-bottom: 1px solid rgba(229,192,123,.5);
+}
+.verse-banner p { font-style: italic; font-size: clamp(1.1rem, 2.6vw, 1.4rem); color: var(--cream); }
+.verse-banner cite { display: block; margin-top: .5rem; color: var(--gold); font-size: .88rem; letter-spacing: .06em; font-family: 'Noto Sans Myanmar', var(--body); }
+
+.prayer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 3vw, 1.8rem); }
+.prayer-card {
+  position: relative;
+  background:
+    radial-gradient(500px 200px at 50% -20%, rgba(246,226,168,.14), transparent 70%),
+    linear-gradient(170deg, rgba(92,26,51,.75), rgba(43,10,26,.9));
+  border: 1px solid rgba(229,192,123,.3);
+  border-radius: 18px;
+  padding: 1.6rem 1.5rem 1.4rem;
+  box-shadow: var(--shadow);
+  transition: transform .35s ease, border-color .35s ease;
+}
+.prayer-card:hover { transform: translateY(-6px); border-color: rgba(229,192,123,.6); }
+.prayer-icon { font-size: 2rem; margin-bottom: .5rem; }
+.prayer-card h3 {
+  font-family: 'Noto Sans Myanmar', 'Padauk', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: .01em;
+  line-height: 1.8;
+  color: var(--gold-light);
+  margin-bottom: .55rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px dashed rgba(229,192,123,.35);
+}
+.prayer-text { font-family: 'Noto Sans Myanmar', 'Padauk', sans-serif; font-weight: 300; color: #efe0dc; font-size: .92rem; line-height: 1.8; }
+
+.verse-chips { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; }
+.chip {
+  font-family: 'Noto Sans Myanmar', 'Padauk', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: .78rem;
+  line-height: 1.7;
+  color: var(--gold-light);
+  border: 1px solid rgba(229, 192, 123, .45);
+  background: rgba(229, 192, 123, .07);
+  border-radius: 999px;
+  padding: .45rem 1.1rem;
+  transition: border-color .3s ease, background .3s ease, transform .3s ease;
+}
+.chip:hover { border-color: rgba(246, 226, 168, .8); background: rgba(229, 192, 123, .14); transform: translateY(-2px); }
+
+@media (max-width: 900px) { .prayer-grid { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; } }
+@media (max-width: 900px) { .vows-grid { grid-template-columns: 1fr; max-width: 540px; margin: 2rem auto 0; } }
+
+/* ══════════ FOOTER ══════════ */
+.footer {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.4));
+  border-top: 1px solid rgba(229,192,123,.2);
+  position: relative;
+  z-index: 2;
+}
+.footer-heart { width: 30px; margin-bottom: .4rem; animation: heartbeat 1.4s ease-in-out infinite; }
+.footer-names { font-family: var(--script); font-size: 1.6rem; color: var(--rose-soft); }
+.footer-names span { color: var(--rose); }
+.footer-date { letter-spacing: .3em; color: var(--gold); font-size: .8rem; margin-top: .4rem; text-transform: uppercase; }
+.footer-note { color: var(--text-dim); font-style: italic; font-size: .85rem; margin-top: .5rem; }
+
+/* ══════════ LIGHTBOX ══════════ */
+.lightbox {
+  position: fixed; inset: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(15, 3, 9, .88);
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s ease;
+}
+.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox img {
+  max-width: min(90vw, 640px);
+  max-height: 85vh;
+  border-radius: 12px;
+  border: 4px solid var(--gold-deep);
+  box-shadow: 0 0 80px rgba(226,96,126,.35);
+}
+.lightbox-close {
+  position: absolute; top: 1rem; right: 1.4rem;
+  font-size: 2.6rem; line-height: 1;
+  background: none; border: none; color: var(--cream);
+  cursor: pointer;
+}
+
+/* ══════════ PRINT (poster mode) ══════════ */
+@media print {
+  @page { size: A4 portrait; margin: 12mm; }
+  body { background: #fff; color: #3d1024; font-size: 11pt; }
+  #petals, .nav, .cta, .scroll-hint, .lightbox { display: none !important; }
+  .hero { min-height: auto; background: #fff; padding: 10mm 0; }
+  .hero-glow, .floral { display: none; }
+  .name { color: #4a0e2e; background: none; -webkit-background-clip: initial; text-shadow: none; }
+  .hero-date, .hero-kicker, .section-kicker { color: #a8622d; }
+  .section-title, .t-body h3, .prayer-card h3 { color: #2b0a1a; }
+  .section-sub, .t-body p, .prayer-text, .hero-tagline, .name-myanmar { color: #4a2c33; }
+  .counter-tile, .prayer-card, .t-body, .vow-card, .scripture-bar { background: #fdf3e7 !important; border: 1px solid #d4a24e; box-shadow: none; }
+  .vow-card::before { border-color: #d4a24e; }
+  .vow-body, .vow-body-strong, .vow-sign, .vow-tag, .chip, .scripture-label { color: #4a2030 !important; text-shadow: none; }
+  .vow-seal, .vow-corner { box-shadow: none; }
+  .vow-corner { display: none; }
+  .counter-num { color: #4a0e2e; background: none; -webkit-background-clip: initial; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+  .frame { box-shadow: none; transform: none !important; }
+  .love-letter { background: #fffdf6 !important; color: #4a2030 !important; box-shadow: none; border: 1px solid #d4a24e; transform: none !important; }
+  .love-letter-body, .love-letter-sign, .love-letter-tag { color: #4a2030 !important; }
+  .section { padding: 6mm 0; page-break-inside: avoid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001s !important; transition-duration: .001s !important; }
+  html { scroll-behavior: auto; }
+}
